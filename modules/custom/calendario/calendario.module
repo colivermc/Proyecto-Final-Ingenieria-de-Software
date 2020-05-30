@@ -1,0 +1,16 @@
+<?php
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+function calendario_evento_cancelar () {
+
+	drupal_set_message('Acción Cancelada!','error');
+	
+	global $base_url;
+	
+	$response = new RedirectResponse($base_url.'/calendario');
+	$response->send();
+	return;
+
+}
+	

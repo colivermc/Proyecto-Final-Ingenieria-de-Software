@@ -1,0 +1,4 @@
+calendario.links:
+  title: 'Proyecto'
+  route_name: calendario.proyecto
+

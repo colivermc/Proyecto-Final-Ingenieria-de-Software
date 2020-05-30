@@ -1,0 +1,32 @@
+<?php
+
+function checklist_theme($existing, $type, $theme, $path)
+{
+	return array(
+		'checklist_detail_tarea' => array(
+			'variables' => array(
+				'equipos' => null,
+				'usuarios_turno' => null
+			),
+		)
+	);
+}
+
+
+/**
+ * Implements hook_mail().
+ */
+function checklist_mail($key, &$message, $params) {
+    $options = array(
+        'langcode' => $message['langcode'],
+    );
+
+    switch ($key) {
+        case 'notificacion_asignacion_de_tarea':
+            $message['from'] = 'no-reply@blautech.us';
+            $message['subject'] = t('Se te ha asignado la tarea: @title', array('@title' => $params['node_title']), $options);
+            $message['body'][] = $params['message'];
+            break;
+    }
+}
+

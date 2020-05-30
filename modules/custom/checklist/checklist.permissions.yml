@@ -1,0 +1,42 @@
+# PERMISOS > CHECKLIST
+# ====================
+
+checklist mostrar checklists:
+  title: 'Ver checklists'
+  description: 'Ver listado de checklist'
+
+checklist mostrar tareas por proyecto:
+  title: 'Ver tareas por proyecto'
+  description: 'Ver listado de tareas por proyecto'
+
+checklist crear tareas por proyecto:
+  title: 'Crear tareas a los proyectos'
+  description: 'Crear tareas a cada proyecto por serparado'
+  restrict access: true
+
+checklist editar tarea por proyecto:
+  title: 'Editar tareas a los proyectos'
+  description: 'Editar tareas a cada proyecto por serparado'
+  restrict access: true
+
+checklist eliminar tarea por proyecto:
+  title: 'Eliminar tareas a los proyectos'
+  description: 'Eliminar tareas a cada proyecto por separado'
+  restrict access: true
+
+checklist ejecutar acciones por tarea:
+  title: 'Ejecuta las acciones asociadas a las tareas'
+  description: 'Ejecuta las acciones asociadas a las tareas (AWS, SLack y Jira)'
+  restrict access: true
+
+checklist ver detalle de la tarea:
+    title: 'Ver detalle de la tarea'
+    description: 'Ver detalle de la tarea'
+
+capiar tareas de un proyecto:
+  title: 'Copiar tareas'
+  description: 'Copiar todas las tareas de un proyecto'
+
+checklist finalizar tarea sin accion:
+  title: 'Finalizar tarea sin acción'
+  description: 'Permite finalizar tareas que no tienen asociadas acciones AWS Medialive, Slack o Jira'

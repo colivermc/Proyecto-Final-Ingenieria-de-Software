@@ -1,0 +1,258 @@
+# PERMISO > MANTENIMIENTO FLAGGER
+# ===============================
+
+mantenimiento menu mantenimiento:
+  title: 'Menú Mantenimiento Flagger'
+  description: 'Mantenimiento de Flagger'
+  restrict access: true
+
+
+# PERMISOS > EMPRESAS
+# ===================
+
+mantenimiento mostrar empresas:
+  title: 'Ver empresas'
+  description: 'Ver empresas'
+
+mantenimiento crear nueva empresa:
+  title: 'crear nueva empresa'
+  description: 'Crear nueva empresa'
+  restrict access: true
+
+mantenimiento editar empresa:
+  title: 'Editar empresa'
+  description: 'Editar empresa'
+  restrict access: true
+
+mantenimiento eliminar empresa:
+  title: 'Eliminar empresa'
+  description: 'Eliminar empresa'
+  restrict access: true
+
+mantenimiento ver empresa:
+    title: 'Ve empresa'
+    description: 'Ver empresa'
+
+
+# PERMISOS > PAISES
+# =================
+
+mantenimiento mostrar paises:
+  title: 'Ver paises'
+  description: 'Ver paises'
+
+mantenimiento crear nuevo pais:
+  title: 'Crear nuevo país'
+  description: 'Crear nuevo país'
+  restrict access: true
+
+mantenimiento editar pais:
+  title: 'Editar país'
+  description: 'Editar país'
+  restrict access: true
+
+mantenimiento eliminar pais:
+  title: 'Eliminar país'
+  description: 'Eliminar país'
+  restrict access: true
+
+#mantenimiento ver pais:
+#  title: 'Ve país'
+#  description: 'Ver país'
+
+
+# PERMISOS > CANALES
+# ==================
+
+mantenimiento mostrar canales:
+  title: 'Ver canales'
+  description: 'Ver canales'
+
+mantenimiento crear nuevo canal:
+  title: 'Crear nuevo canal'
+  description: 'Persmiso para crear nuevos canales'
+  restrict access: true
+
+mantenimiento editar canal:
+  title: 'Editar canal'
+  description: 'Permiso para editar canales existentes'
+  restrict access: true
+
+mantenimiento eliminar canal:
+  title: 'Eliminar canal'
+  description: 'Permiso para eliminar canales'
+  restrict access: true
+
+#mantenimiento ver pais:
+#  title: 'Ve país'
+#  description: 'Ver país'
+
+
+# PERMISOS > TIPOS EVENTO
+# =======================
+
+mantenimiento mostrar tipos de evento:
+  title: 'Ver tipos de evento'
+  description: 'Permiso a ver tipos de eventos'
+
+mantenimiento crear nuevo tipo de evento:
+  title: 'Crear tipos de evento'
+  description: 'Persmiso para crear nuevos tipos de evento'
+  restrict access: true
+
+mantenimiento editar tipo de evento:
+  title: 'Editar tipo de evento'
+  description: 'Permiso para editar tipos de evento'
+  restrict access: true
+
+mantenimiento eliminar tipo de evento:
+  title: 'Eliminar tipo de evento'
+  description: 'Permiso para eliminar tipo de evento'
+  restrict access: true
+
+#mantenimiento ver tipo de evento:
+#  title: 'Ve país'
+#  description: 'Ver país'
+
+
+# PERMISOS > TUNRNOS
+# ==================
+
+mantenimiento mostrar equipos:
+  title: 'Ver equipos'
+  description: 'Permiso a ver los equipos'
+
+mantenimiento crear nuevo equipo:
+  title: 'Crear tipos de evento'
+  description: 'Persmiso para crear nuevos equipos'
+  restrict access: true
+
+mantenimiento editar equipo:
+  title: 'Editar equipo'
+  description: 'Permiso para editar equipos'
+  restrict access: true
+
+mantenimiento eliminar equipo:
+  title: 'Eliminar equipo'
+  description: 'Permiso para eliminar equipos'
+  restrict access: true
+
+#mantenimiento ver equipo:
+#  title: 'Ver equipo'
+#  description: 'Permiso para ver detalle de los equipos'
+
+
+# PERMISOS > CANALES SLACK
+# ==================
+
+mantenimiento mostrar canales slack:
+  title: 'Ver canales de slack'
+  description: 'Permiso para ver los canales de slack'
+
+mantenimiento crear nuevo canal de slack:
+  title: 'Crear nuevo canal de Slack'
+  description: 'Permiso para crear nuevo canal de Slack'
+  restrict acces: true
+
+mantenimiento editar canal slack:
+  title: 'Editar canal de Slack'
+  description: 'Permiso para editar canal de Slack'
+  restrict acces: true
+
+mantenimiento eliminar canal slack:
+  title: 'Eliminar canal de Slack'
+  description: 'Permiso para eliminar canal de Slack'
+  restrict acces: true
+
+
+# PERMISOS > PROYECTOS JIRA
+# =========================
+
+mantenimiento mostrar proyectos jira:
+  title: 'Ver proyectos Jira'
+  description: 'Permiso para ver los proyectos Jira'
+
+mantenimiento crear nuevo proyecto jira:
+  title: 'Crear nuevo canal de Slack'
+  description: 'Permiso para crear nuevos proyectos Jira'
+  restrict acces: true
+
+mantenimiento editar proyecto jira:
+  title: 'Editar canal de Slack'
+  description: 'Permiso para editar proyectos Jira'
+  restrict acces: true
+
+mantenimiento eliminar proyecto jira:
+  title: 'Eliminar canal de Slack'
+  description: 'Permiso para eliminar proyectos Jira'
+  restrict acces: true
+
+
+# PERMISOS > RESPONSABLES
+# =======================
+
+mantenimiento mostrar responsables:
+  title: 'Ver responsables'
+  description: 'Permiso para ver los responsables'
+
+mantenimiento crear nuevo responsable:
+  title: 'Crear nuevo responsable'
+  description: 'Permiso para crear nuevos responsables'
+  restrict acces: true
+
+mantenimiento editar responsable:
+  title: 'Editar responsable'
+  description: 'Permiso para editar responsables creados'
+  restrict acces: true
+
+mantenimiento eliminar responsable:
+  title: 'Eliminar responsable'
+  description: 'Permiso para eliminar responsables'
+  restrict acces: true
+
+
+# PERMISOS > TIPO TAREAS
+# ======================
+
+mantenimiento mostrar tipo tareas:
+  title: 'Ver Tipos de tareas'
+  description: 'Ver tipos de tareas'
+
+mantenimiento crear nuevo tipo tarea:
+  title: 'Crear Tipos de tarea'
+  description: 'Crear tipos de tareas'
+  restrict access: true
+
+mantenimiento editar tipo tarea:
+  title: 'Editar Tipo de Tarea'
+  description: 'Editar tipos de tareas'
+  restrict access: true
+
+mantenimiento eliminar tipo tarea:
+  title: 'Eliminar Tipo de Tarea'
+  description: 'Eliminar tipos de tareas'
+  restrict access: true
+
+
+# PERMISOS > ESTADOS TAREAS
+# ======================
+
+mantenimiento mostrar estados tareas:
+  title: 'Ver Estados de tareas'
+  description: 'Ver estados de tareas'
+
+mantenimiento crear nuevo estado tarea:
+  title: 'Crear Estado de tarea'
+  description: 'Crear estados de tareas'
+  restrict access: true
+
+mantenimiento editar estado tarea:
+  title: 'Editar Estado de Tarea'
+  description: 'Editar estado de tareas'
+  restrict access: true
+
+mantenimiento eliminar estado tarea:
+  title: 'Eliminar Estado de Tarea'
+  description: 'Eliminar estado de tareas'
+  restrict access: true
+

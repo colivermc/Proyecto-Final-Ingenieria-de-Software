@@ -1,0 +1,7 @@
+mantenimiento:
+  version: 1.x
+  css:
+    theme:
+      library/css/mantenimiento.css: {}
+  js:
+    library/js/mantenimiento.js: {}

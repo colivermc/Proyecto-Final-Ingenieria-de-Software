@@ -1,0 +1,51 @@
+#RUTAS > CALENDARIO
+#==================
+
+calendario.proyecto:
+  path: '/proyectos'
+  defaults:
+    _controller: '\Drupal\calendario\Controller\calendarioController::mostrarCalendario'
+    _title: 'Proyecto'
+  requirements:
+    _permission: 'calendario mostrar calendario'
+
+calendario.addProyecto:
+  path: '/calendario/proyecto/agregar'
+  defaults:
+    _title: 'Agregar Proyecto'
+    _form: '\Drupal\calendario\Form\addProyecto'
+  requirements:
+    _permission: 'calendario crear proyecto para calendario'
+
+calendario.importProyecto:
+  path: '/calendario/proyecto/import'
+  defaults:
+    _title: 'Importar proyectos'
+    _form: '\Drupal\calendario\Form\importProyecto'
+  requirements:
+    _permission: 'calendario importar proyectos para calendario'
+
+calendario.editProyecto:
+  path: '/calendario/proyecto/{arg}/edit'
+  defaults:
+    _title: 'Editar Proyecto'
+    _form: '\Drupal\calendario\Form\editProyecto'
+  requirements:
+    _permission: 'calendario editar proyecto del calendario'
+
+calendario.deleteProyecto:
+  path: '/calendario/proyecto/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\calendario\Form\deleteProyecto'
+  requirements:
+    _permission: 'calendario eliminar proyecto del calendario'
+
+#calendario.showEmpresa:
+#  path: '/calendario/proyecto/{arg}'
+#  defaults:
+#    _controller: '\Drupal\calendario\Controller\calendarioController::showProyecto'
+#    _title: 'Detalle del Proyecto'
+#  requirements:
+#    _permission: 'calendario ver detalle del proyecto'
+

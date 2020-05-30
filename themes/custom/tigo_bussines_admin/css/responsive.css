@@ -1,0 +1,259 @@
+@media only screen and (min-width: 280px) and (max-width: 480px) {
+
+    .hamburger {
+        left: 0;
+    }
+
+
+    .botones-cabecera-tabla {
+        float: none;
+        width: auto;
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .botones-cabecera-tabla {
+        float: none;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 0;
+        display: inline-block;
+    }
+
+    .botones-cabecera-tabla a {
+        margin-bottom: 25px;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .calendario-editevento .field-datetime, 
+    .calendario-addevento .field-datetime, 
+    .calendario-addevento .form-item {
+        width: 100%;
+
+    }
+
+    .modal-content {
+        max-height: inherit !important;
+    }
+
+    form .panel-body .form-item, .mantenimiento-editpais .panel-body .form-item, 
+    .mantenimiento-addpais .panel-body .form-item {
+        margin-bottom: 15px;
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .checklist-edittarea .panel-body .form-item, .checklist-addtarea .panel-body .form-item {
+        width: 100%;
+    }
+
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .hamburger .line:nth-child(1) {
+        /* transform: translateY(410%) rotate(45deg)!important; */
+    }
+
+    .calendario-addevento .container-inline.form-inline .form-inline {
+        margin-right: 8px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    .checklist-edittarea .panel-body .form-item,
+    .checklist-addtarea .panel-body .form-item {
+        width: 48%;
+    }
+
+
+
+
+
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+    .block-views-blockperfil-usuario-block-1 {
+        float: left;
+        border-left: 0;
+        border-right: 2px solid #dcdcdc;
+    }
+
+    .hamburger.active {
+        left: -1px !important;
+    }
+
+    .hamburger {
+        width: 52px;
+        height: 33px;
+        top: 11px;
+    }
+    
+
+    .overlay-mobile.open{
+        display: block;
+    }
+    .sidenav {
+        left: 0;
+    }
+    .sidenav.sid-collapse {
+        left: -250px;
+    }
+    .hamburger {
+        float: right;
+    }
+    .hamburger.active .line:nth-child(2) {
+        opacity: 1;
+        width: 100%;
+    }
+    .hamburger.active .line:nth-child(1) {
+        width: 100%;
+        transform: none;
+    }
+    .hamburger.active .line:nth-child(3) {
+        width: 100%;
+        transform: none;
+    }
+    .hamburger .line:nth-child(1) {
+        width: 100%;
+        transform: translateY(250%) rotate(45deg);
+    }
+    .hamburger .line:nth-child(2) {
+        width: 100%;
+        opacity: 0;
+    }
+    .hamburger .line:nth-child(3) {
+        width: 100%;
+        transform: translateY(-250%) rotate(-45deg);
+    }
+    .navbar-nav {
+        margin: 7.5px 0;
+    }
+    .item-dash {
+        margin-bottom: 15px;
+    }
+    .contenedor-graficos {
+        margin-top: 0;
+    }
+    .content-sidenav.con-collapse {
+        position: relative;
+        width: 100%;
+        left: 0;
+        transition: .3s;
+    }
+    .sidenav {
+        z-index: 14;
+    }
+    .path-user-password .region.region-content, .path-user-login .region.region-content {
+        background: #fff;
+        width: 100%;
+        padding: 15px 15px;
+        margin: 0 auto;
+    }
+    .region.region-navigation {
+        width: 80%;
+    }
+    .logo.navbar-btn.pull-left {
+        text-align: center;
+        border-bottom: 1px solid
+        #fff;
+        padding-bottom: 12px;
+        overflow: hidden;
+        display: block;
+        height: auto;
+        margin-bottom: 0;
+    }
+    #block-tigo-bussines-admin-account-menu {
+        position: absolute;
+        top: 8px;
+        right: 75px;
+    }
+    .page-header {
+        font-size: 45px;
+    }
+    .panel-body div>.btn {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .panel.panel-default .panel-body {
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    form>.form-item, form>.form-group, #warehouse-productos-create-form>.form-item, #warehouse-productos-create-form>.form-group, #office-pass-create-form>.form-item, #office-pass-create-form>.form-group {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .logo.navbar-btn.pull-left {
+        padding: 0;
+    }
+    .logo.navbar-btn.pull-left img {
+        width: 150px
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .hamburger {
+        width: 52px;
+        height: 33px;
+        top: 11px;
+    }
+
+    .checklist-edittarea .panel-body .form-item, .checklist-addtarea .panel-body .form-item {
+        width: 31%;
+    }
+
+    .table-responsive {
+        zoom: 60%;
+    }
+
+    .path-user-password .region.region-content,
+    .path-user-login .region.region-content {
+        background: #fff;
+        width: 50%;
+        padding: 57px 82px;
+        margin: 0 auto;
+    }
+
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+
+    .table-responsive {
+        zoom: 60%;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .path-user-password .region.region-content,
+    .path-user-login .region.region-content {
+        background: #fff;
+        width: 50%;
+        padding: 57px 82px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .path-user-password .region.region-content,
+    .path-user-login .region.region-content {
+        background: #fff;
+        width: 25%;
+        padding: 57px 82px;
+        margin: 0 auto;
+    }
+}
+ 

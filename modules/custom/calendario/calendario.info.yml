@@ -1,0 +1,8 @@
+name: Task Planner Calendario
+description: Importarción y creación de proyectos
+package: Task Planner
+type: module
+core: 8.x
+
+dependencies:
+  - mantenimiento

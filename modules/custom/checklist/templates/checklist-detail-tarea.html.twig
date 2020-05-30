@@ -1,0 +1,15 @@
+
+<h1>Equipos:</h1>
+
+{% for index_equipo, equipo in equipos %}
+    <h3>Equipo "{{equipo}}"</h3>
+    <ul>
+        {% for index_uturno, uturno in usuarios_turno %}
+            {% if index_uturno == index_equipo %}
+                {% for index_user, user in uturno %}
+                    <li>{{user}}</li>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endfor %}

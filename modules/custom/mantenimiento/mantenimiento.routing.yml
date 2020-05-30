@@ -1,0 +1,405 @@
+# RUTAS > MENU
+# ============
+
+mantenimiento.menu_mantenimiento:
+  path: '/mantenimiento'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\mantenimientoController::menu_mantenimiento'
+    _title: 'Mantenimiento Flagger'
+  requirements:
+    _permission: 'mantenimiento menu mantenimiento'
+
+#RUTAS > EMPRESAS
+#================
+
+mantenimiento.empresas:
+  path: '/empresas'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\empresaController::mostrarEmpresas'
+    _title: 'Empresas'
+  requirements:
+    _permission: 'mantenimiento mostrar empresas'
+
+mantenimiento.addempresa:
+  path: '/empresa/agregar'
+  defaults:
+    _title: 'Agregar Empresa'
+    _form: '\Drupal\mantenimiento\Form\addEmpresa'
+  requirements:
+    _permission: 'mantenimiento crear nueva empresa'
+
+mantenimiento.editEmpresa:
+  path: '/empresa/{arg}/edit'
+  defaults:
+    _title: 'Editar Empresa'
+    _form: '\Drupal\mantenimiento\Form\editEmpresa'
+  requirements:
+    _permission: 'mantenimiento editar empresa'
+
+mantenimiento.deleteEmpresa:
+  path: '/empresa/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteEmpresa'
+  requirements:
+    _permission: 'mantenimiento eliminar empresa'
+
+mantenimiento.showEmpresa:
+  path: '/empresa/empresa/{arg}'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\empresaController::showEmpresa'
+    _title: 'Empresa'
+  requirements:
+    _permission: 'mantenimiento ver empresa'
+
+
+
+#RUTAS > PAISES
+#==============
+mantenimiento.paises:
+  path: '/paises'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\paisController::mostrarPaises'
+    _title: 'Paises'
+  requirements:
+    _permission: 'mantenimiento mostrar paises'
+
+mantenimiento.addpais:
+  path: '/pais/agregar'
+  defaults:
+    _title: 'Agregar País'
+    _form: '\Drupal\mantenimiento\Form\addPais'
+  requirements:
+    _permission: 'mantenimiento crear nuevo pais'
+
+mantenimiento.editPais:
+  path: '/pais/{arg}/edit'
+  defaults:
+    _title: 'Editar País'
+    _form: '\Drupal\mantenimiento\Form\editPais'
+  requirements:
+    _permission: 'mantenimiento editar pais'
+
+mantenimiento.deletePais:
+  path: '/pais/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deletePais'
+  requirements:
+    _permission: 'mantenimiento eliminar pais'
+
+#mantenimiento.showEmpresa:
+#  path: '/mantenimiento/empresa/{arg}'
+#  defaults:
+#    _controller: '\Drupal\mantenimiento\Controller\empresaController::showEmpresa'
+#    _title: 'Empresa'
+#  requirements:
+#    _permission: 'mantenimiento ver pais'
+
+
+# RUTAS > CANALES
+# ===============
+mantenimiento.canales:
+  path: '/canales'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\canalController::mostrarCanales'
+    _title: 'Canales'
+  requirements:
+    _permission: 'mantenimiento mostrar canales'
+
+mantenimiento.addCanal:
+  path: '/canal/agregar'
+  defaults:
+    _title: 'Agregar Canal'
+    _form: '\Drupal\mantenimiento\Form\addCanal'
+  requirements:
+    _permission: 'mantenimiento crear nuevo canal'
+
+mantenimiento.editCanal:
+  path: '/canal/{arg}/edit'
+  defaults:
+    _title: 'Editar Canal'
+    _form: '\Drupal\mantenimiento\Form\editCanal'
+  requirements:
+    _permission: 'mantenimiento editar canal'
+
+mantenimiento.deleteCanel:
+  path: '/canal/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteCanal'
+  requirements:
+    _permission: 'mantenimiento eliminar canal'
+
+#mantenimiento.showEmpresa:
+#  path: '/mantenimiento/empresa/{arg}'
+#  defaults:
+#    _controller: '\Drupal\mantenimiento\Controller\empresaController::showEmpresa'
+#    _title: 'Empresa'
+#  requirements:
+#    _permission: 'mantenimiento ver pais'
+
+
+# RUTAS > TIPOS DE EVENTO
+# =======================
+mantenimiento.tiposEvento:
+  path: '/tipos-evento'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\tipoEventoController::mostrarTiposEvento'
+    _title: 'Tipos de Evento'
+  requirements:
+    _permission: 'mantenimiento mostrar tipos de evento'
+
+mantenimiento.addTipoEvento:
+  path: '/tipo-evento/agregar'
+  defaults:
+    _title: 'Agregar Tipo de Evento'
+    _form: '\Drupal\mantenimiento\Form\addTipoEvento'
+  requirements:
+    _permission: 'mantenimiento crear nuevo tipo de evento'
+
+mantenimiento.editTipoEvento:
+  path: '/tipo-evento/{arg}/edit'
+  defaults:
+    _title: 'Editar Tipo de Evento'
+    _form: '\Drupal\mantenimiento\Form\editTipoEvento'
+  requirements:
+    _permission: 'mantenimiento editar tipo de evento'
+
+mantenimiento.deleteTipoEvento:
+  path: '/tipo-evento/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteTipoEvento'
+  requirements:
+    _permission: 'mantenimiento eliminar tipo de evento'
+
+#mantenimiento.showTipoEvento:
+#  path: '/mantenimiento/tipo-evento/{arg}'
+#  defaults:
+#    _controller: '\Drupal\mantenimiento\Controller\tipoEventoController::showTipoEvento'
+#    _title: 'Tipo de Evento'
+#  requirements:
+#    _permission: 'mantenimiento ver tipo de evento'
+
+
+# RUTAS > EQUIPOS
+# ==============
+mantenimiento.equipos:
+  path: '/equipos'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\equipoController::mostrarEquipos'
+    _title: 'Equipos'
+  requirements:
+    _permission: 'mantenimiento mostrar equipos'
+
+mantenimiento.addEquipo:
+  path: '/equipo/agregar'
+  defaults:
+    _title: 'Agregar equipo'
+    _form: '\Drupal\mantenimiento\Form\addEquipo'
+  requirements:
+    _permission: 'mantenimiento crear nuevo equipo'
+
+mantenimiento.editEquipo:
+  path: '/equipo/{arg}/edit'
+  defaults:
+    _title: 'Editar Equipo'
+    _form: '\Drupal\mantenimiento\Form\editEquipo'
+  requirements:
+    _permission: 'mantenimiento editar equipo'
+
+mantenimiento.deleteEquipo:
+  path: '/equipo/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteEquipo'
+  requirements:
+    _permission: 'mantenimiento eliminar equipo'
+
+#mantenimiento.showEquipo:
+#  path: '/mantenimiento/tipo-evento/{arg}'
+#  defaults:
+#    _controller: '\Drupal\mantenimiento\Controller\tipoEventoController::showTipoEvento'
+#    _title: 'Tipo de Evento'
+#  requirements:
+#    _permission: 'mantenimiento ver tipo de evento'
+
+# RUTAS > CANALES SLACK
+# =====================
+
+mantenimiento.canalesslack:
+  path: '/canales-slack'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\canalSlackController::mostrarCanalesSlack'
+    _title: 'Canales de Slack'
+  requirements:
+    _permission: 'mantenimiento mostrar canales slack'
+
+mantenimiento.addcanalslack:
+  path: '/canal-slack/agregar'
+  defaults:
+    _form: 'Drupal\mantenimiento\Form\addCanalSlack'
+    _title: 'Agregar canal de Slack'
+  requirements:
+    _permission: 'mantenimiento crear nuevo canal de slack'
+
+mantenimiento.editcanalslack:
+  path: '/canal-slack/{arg}/edit'
+  defaults:
+    _title: 'Editar Canal Slack'
+    _form: '\Drupal\mantenimiento\Form\editCanalSlack'
+  requirements:
+    _permission: 'mantenimiento editar canal slack'
+
+mantenimiento.deletecanalslack:
+  path: '/canal-slack/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteCanalSlack'
+  requirements:
+    _permission: 'mantenimiento eliminar canal slack'
+
+
+# RUTAS > PROYECTOS JIRA
+# ======================
+
+mantenimiento.proyectosJira:
+  path: '/proyectos-jira'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\proyectoJiraController::mostrarProyectosJira'
+    _title: 'Proyectos Jira'
+  requirements:
+    _permission: 'mantenimiento mostrar proyectos jira'
+
+mantenimiento.addProyectoJira:
+  path: '/proyecto-jira/add'
+  defaults:
+    _form: 'Drupal\mantenimiento\Form\addProyectoJira'
+    _title: 'Agregar Proyecto Jira'
+  requirements:
+    _permission: 'mantenimiento crear nuevo proyecto jira'
+
+mantenimiento.editProyectoJira:
+  path: '/proyecto-jira/{arg}/edit'
+  defaults:
+    _title: 'Editar Proyecto Jira'
+    _form: '\Drupal\mantenimiento\Form\editProyectoJira'
+  requirements:
+    _permission: 'mantenimiento editar proyecto jira'
+
+mantenimiento.deleteProyectoJira:
+  path: '/proyecto-jira/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteProyectoJira'
+  requirements:
+    _permission: 'mantenimiento eliminar proyecto jira'
+
+
+# RUTAS > RESPONSABLES
+# ====================
+
+mantenimiento.responsables:
+  path: '/responsables'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\responsableController::mostrarResponsables'
+    _title: 'Responsables'
+  requirements:
+    _permission: 'mantenimiento mostrar responsables'
+
+mantenimiento.addResponsable:
+  path: '/responsable/add'
+  defaults:
+    _form: 'Drupal\mantenimiento\Form\addResponsable'
+    _title: 'Agregar Proyecto Jira'
+  requirements:
+    _permission: 'mantenimiento crear nuevo responsable'
+
+mantenimiento.editResponsable:
+  path: '/responsable/{arg}/edit'
+  defaults:
+    _title: 'Editar Proyecto Jira'
+    _form: '\Drupal\mantenimiento\Form\editResponsable'
+  requirements:
+    _permission: 'mantenimiento editar responsable'
+
+mantenimiento.deleteResponsable:
+  path: '/responsable/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteResponsable'
+  requirements:
+    _permission: 'mantenimiento eliminar responsable'
+
+
+#RUTAS > TIPOS DE TAREAS
+#=======================
+
+mantenimiento.tipos_tarea:
+  path: '/tipos-tarea'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\tipoTareaController::mostrarTipoTareas'
+    _title: 'Tipo de Tareas'
+  requirements:
+    _permission: 'mantenimiento mostrar tipo tareas'
+
+mantenimiento.addTipoTarea:
+  path: '/tipo-tarea/agregar'
+  defaults:
+    _title: 'Agregar Tipo de Tarea'
+    _form: '\Drupal\mantenimiento\Form\addTipoTarea'
+  requirements:
+    _permission: 'mantenimiento crear nuevo tipo tarea'
+
+mantenimiento.editTipoTarea:
+  path: '/tipo-tarea/{arg}/edit'
+  defaults:
+    _title: 'Editar Tipo Tarea'
+    _form: '\Drupal\mantenimiento\Form\editTipoTarea'
+  requirements:
+    _permission: 'mantenimiento editar tipo tarea'
+
+mantenimiento.deleteTipoTarea:
+  path: '/tipo-tarea/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteTipoTarea'
+  requirements:
+    _permission: 'mantenimiento eliminar tipo tarea'
+
+
+#RUTAS > ESTADOS DE TAREAS
+#=======================
+
+mantenimiento.estados_tarea:
+  path: '/estados-tarea'
+  defaults:
+    _controller: '\Drupal\mantenimiento\Controller\estadoTareaController::mostrarEstadosTareas'
+    _title: 'Estados de Tareas'
+  requirements:
+    _permission: 'mantenimiento mostrar estados tareas'
+
+mantenimiento.addEstadoTarea:
+  path: '/estado-tarea/agregar'
+  defaults:
+    _title: 'Agregar Estado de Tarea'
+    _form: '\Drupal\mantenimiento\Form\addEstadoTarea'
+  requirements:
+    _permission: 'mantenimiento crear nuevo estado tarea'
+
+mantenimiento.editEstadoTarea:
+  path: '/estado-tarea/{arg}/edit'
+  defaults:
+    _title: 'Editar Estado Tarea'
+    _form: '\Drupal\mantenimiento\Form\editEstadoTarea'
+  requirements:
+    _permission: 'mantenimiento editar estado tarea'
+
+mantenimiento.deleteEstadoTarea:
+  path: '/estado-tarea/{arg}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\mantenimiento\Form\deleteEstadoTarea'
+  requirements:
+    _permission: 'mantenimiento eliminar estado tarea'

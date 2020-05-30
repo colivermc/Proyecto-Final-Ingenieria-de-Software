@@ -1,0 +1,43 @@
+#mantenimiento.links_mantenimiento:
+#  title: 'Menú Mantenimiento'
+#  route_name: mantenimiento.menu_mantenimiento
+
+mantenimiento.links_empresa:
+  title: 'Empresa'
+  route_name: mantenimiento.empresas
+
+mantenimiento.links_paises:
+  title: 'País'
+  route_name: mantenimiento.paises
+
+#mantenimiento.links_canales:
+#  title: 'Canal'
+#  route_name: mantenimiento.canales
+
+#mantenimiento.links_tipos_evento:
+#  title: 'Tipos de Evento'
+#  route_name: mantenimiento.tiposEvento
+
+mantenimiento.links_equipos:
+  title: 'Equipo'
+  route_name: mantenimiento.equipos
+
+#mantenimiento.links_canales_slack:
+#  title: 'Canales Slack'
+#  route_name: mantenimiento.canalesslack
+#
+#mantenimiento.links_proyectos_jira:
+#  title: 'Proyecto Jira'
+#  route_name: mantenimiento.proyectosJira
+
+mantenimiento.links_responsables:
+  title: 'Responsable'
+  route_name: mantenimiento.responsables
+
+mantenimiento.link_tipo_tarea:
+  title: 'Tipos Tarea'
+  route_name: mantenimiento.tipos_tarea
+
+mantenimiento.link_estado_tarea:
+  title: 'Estado Tarea'
+  route_name: mantenimiento.estados_tarea

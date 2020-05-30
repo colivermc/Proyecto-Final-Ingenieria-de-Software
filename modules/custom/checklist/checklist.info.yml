@@ -1,0 +1,16 @@
+name: Task Planner Checklist
+description: Creacion de tarear por proyecto
+package: Task Planner
+type: module
+core: 8.x
+
+js:
+  js/jquery.form_example.js: {}
+
+dependencies:
+  - mantenimiento
+  - calendario
+
+
+
+

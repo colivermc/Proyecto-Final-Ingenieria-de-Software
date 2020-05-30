@@ -1,0 +1,152 @@
+<?php
+
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+function mantenimiento_empresa_cancelar () {
+
+  drupal_set_message('Acción Cancelada!','error');
+
+  global $base_url;
+
+  $response = new RedirectResponse($base_url.'/empresas');
+  $response->send();
+  return;
+
+}
+
+function mantenimiento_pais_cancelar () {
+
+  drupal_set_message('Acción Cancelada!','error');
+
+  global $base_url;
+
+  $response = new RedirectResponse($base_url.'/paises');
+  $response->send();
+  return;
+
+}
+
+  function mantenimiento_canal_cancelar () {
+
+    drupal_set_message('Acción Cancelada!','error');
+
+    global $base_url;
+
+    $response = new RedirectResponse($base_url.'/canales');
+    $response->send();
+    return;
+
+  }
+
+  function mantenimiento_tipo_evento_cancelar () {
+
+    drupal_set_message('Acción Cancelada!','error');
+
+    global $base_url;
+
+    $response = new RedirectResponse($base_url.'/tipos-evento');
+    $response->send();
+    return;
+
+  }
+
+  function mantenimiento_equipo_cancelar () {
+
+    drupal_set_message('Acción Cancelada!','error');
+
+    global $base_url;
+
+    $response = new RedirectResponse($base_url.'/equipos');
+    $response->send();
+    return;
+
+  }
+
+  function mantenimiento_canal_slack_cancelar () {
+
+    drupal_set_message('Acción Cancelada!','error');
+
+    global $base_url;
+
+    $response = new RedirectResponse($base_url.'/canales-slack');
+    $response->send();
+    return;
+
+  }
+
+  function mantenimiento_proyecto_jira_cancelar () {
+
+    drupal_set_message('Acción Cancelada!','error');
+
+    global $base_url;
+
+    $response = new RedirectResponse($base_url.'/proyectos-jira');
+    $response->send();
+    return;
+
+  }
+	
+	function mantenimiento_responsable_cancelar () {
+		
+		drupal_set_message('Acción Cancelada!','error');
+		
+		global $base_url;
+		
+		$response = new RedirectResponse($base_url.'/responsables');
+		$response->send();
+		return;
+		
+	}
+
+    function mantenimiento_tipo_tarea_cancelar () {
+
+        drupal_set_message('Acción Cancelada!','error');
+
+        global $base_url;
+
+        $response = new RedirectResponse($base_url.'/tipos-tareas');
+        $response->send();
+        return;
+
+    }
+
+    function mantenimiento_estado_tarea_cancelar () {
+
+        drupal_set_message('Acción Cancelada!','error');
+
+        global $base_url;
+
+        $response = new RedirectResponse($base_url.'/estados-tarea');
+        $response->send();
+        return;
+
+    }
+
+  function getRegistro($tabla, $nombre_id, $id) {
+    $connection = \Drupal::database();
+    $query = $connection->query("SELECT * FROM {$tabla} WHERE $nombre_id = :$nombre_id", [
+      ':'.(string)$nombre_id => $id,
+    ]);
+    $result = $query->fetchAssoc();
+
+    $usuario_creador = \Drupal\user\Entity\User::load($result['uid_creador']);
+
+    if (!empty($result['uid_editor'])){
+      $usuario_editor = \Drupal\user\Entity\User::load($result['uid_editor']);
+      $result['uid_editor'] = $usuario_editor->get('name')->value;
+    }
+
+    $result['uid_creador'] = $usuario_creador->get('name')->value;
+
+    return $result;
+
+  }
+
+function mantenimiento_theme($existing, $type, $theme, $path) {
+  return [
+    'mantenimiento_template' => [
+      'variables' => ['test_var' => NULL],
+    ],
+  ];
+}

@@ -1,0 +1,20 @@
+framework:
+  css:
+    theme:
+      css/comun.css: {}
+      css/datatables.css: {}
+      css/style.css: {}
+      css/responsive.css: {}
+
+#      Libreria ColorBox
+      css/colorbox.css: {}
+  js:
+    js/jquery.dataTables.js: {}
+    js/custom.js: {}
+
+#    Libreria ColorBox
+    js/jquery.colorbox.js: {}
+    js/modals.js: {}
+
+  dependencies:
+    - core/jqueryw

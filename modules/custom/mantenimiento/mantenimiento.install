@@ -1,0 +1,865 @@
+<?php
+function mantenimiento_schema()
+{
+
+# EMPRESA -----------------------------------------------------------------------------------------------------------
+    $schema['tp_empresa'] = array(
+    'description' => 'Mantenimiento de empresas.',
+    'fields' => array(
+      'id_empresa' => array(
+        'type' => 'serial',
+        'not null' => true,
+      ),
+      'nombre' => array(
+        'type' => 'varchar',
+        'length' => 200,
+        'not null' => true,
+        'default' => '',
+      ),
+        'descripcion' => array(
+            'type' => 'varchar',
+            'length' => 500,
+            'not null' => true,
+            'default' => '',
+        ),
+      'fecha_creacion' => array(
+        'type' => 'int',
+        'not null' => true,
+      ),
+      'fecha_edicion' => array(
+        'type' => 'int',
+        'not null' => false,
+      ),
+      'uid_creador' => array(
+        'type' => 'int',
+        'not null' => true,
+      ),
+      'uid_editor' => array(
+        'type' => 'int',
+        'not null' => false,
+      ),
+      'estado' => array(
+        'type' => 'int',
+        'not null' => true,
+        'default' => 1,
+      ),
+    ),
+
+    'primary key' => array('id_empresa'),
+  );
+
+    # PAIS ------------------------------------------------------------------------------------------------------------
+    $schema['tp_pais'] = array(
+      'description' => 'Mantenimiento de paises.',
+      'fields' => array(
+        'id_pais' => array(
+          'type' => 'serial',
+          'not null' => true,
+        ),
+        'nombre' => array(
+          'type' => 'varchar',
+          'length' => 200,
+          'not null' => true,
+          'default' => '',
+        ),
+        'identificador' => array(
+          'type' => 'varchar',
+          'length' => 10,
+          'not null' => true,
+          'default' => '',
+        ),
+        'fecha_creacion' => array(
+          'type' => 'int',
+          'not null' => true,
+        ),
+        'fecha_edicion' => array(
+          'type' => 'int',
+          'not null' => false,
+        ),
+        'uid_creador' => array(
+          'type' => 'int',
+          'not null' => true,
+        ),
+        'uid_editor' => array(
+          'type' => 'int',
+          'not null' => false,
+        ),
+        'estado' => array(
+          'type' => 'int',
+          'not null' => true,
+          'default' => 1,
+        ),
+      ),
+
+      'primary key' => array('id_pais'),
+  );
+
+
+
+    # TIPO_proyecto ---------------------------------------------------------------------------------------------------
+    $schema['tp_tipo_proyecto'] = array(
+      'description' => 'Mantenimiento de tipos de proyecto.',
+      'fields' => array(
+          'id_tipo_proyecto' => array(
+            'type' => 'serial',
+            'not null' => true,
+          ),
+          'nombre' => array(
+            'type' => 'varchar',
+            'length' => 100,
+            'not null' => true,
+          ),
+          'descripcion' => array(
+            'type' => 'varchar',
+            'length' => 500,
+            'not null' => true,
+          ),
+          'fecha_creacion' => array(
+            'type' => 'int',
+            'not null' => true,
+          ),
+          'fecha_edicion' => array(
+            'type' => 'int',
+            'not null' => false,
+          ),
+          'uid_creador' => array(
+            'type' => 'int',
+            'not null' => true,
+          ),
+          'uid_editor' => array(
+            'type' => 'int',
+            'not null' => false,
+          ),
+          'estado' => array(
+            'type' => 'int',
+            'not null' => true,
+            'default' => 1,
+          ),
+      ),
+
+      'primary key' => array('id_tipo_proyecto'),
+  );
+
+    # proyecto -----------------------------------------------------------------------------------------------------------
+    $schema['tp_proyecto'] = array(
+        'description' => 'Mantenimiento de proyectos del proyecto.',
+        'fields' => array(
+            'id_proyecto' => array(
+                'type' => 'serial',
+                'not null' => true,
+            ),
+            'proyecto' => array(
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => true,
+            ),
+            'fecha_transmision' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'duracion' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_finalizacion' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'id_pais' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'id_canal' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'estado_transmision' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'id_empresa' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_creacion' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_edicion' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'uid_creador' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'uid_editor' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'estado' => array(
+                'type' => 'int',
+                'not null' => true,
+                'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_proyecto'),
+
+        'foreign keys' => [
+            'proyecto_pais' => [
+                'table' => 'tp_pais',
+                'columns' => [
+                    'id_pais' => 'id_pais',
+                ],
+            ],
+         ],
+        'foreign keys' => [
+            'proyecto_canal' => [
+                'table' => 'tp_canal',
+                'columns' => [
+                    'id_canal' => 'id_canal',
+                ],
+            ],
+         ],
+        'foreign keys' => [
+            'id_empresa' => [
+                'table' => 'tp_empresa',
+                'columns' => [
+                    'id_empresa' => 'id_empresa',
+                ],
+            ],
+         ],
+    );
+
+    # RESPONSABLE -------------------------------------------------------------------------------------------------------------
+        $schema['tp_responsable'] = array(
+            'description' => 'Mantenimiento de responsables.',
+            'fields' => array(
+                'id_responsable' => array(
+                    'type' => 'serial',
+                    'not null' => true,
+                ),
+                'nombre' => array(
+                    'type' => 'varchar',
+                    'length' => 500,
+                    'not null' => true,
+                ),
+                'apellido' => array(
+                    'type' => 'varchar',
+                    'length' => 500,
+                    'not null' => true,
+                ),
+
+                'username' => array(
+                    'type' => 'varchar',
+                    'length' => 200,
+                    'not null' => true,
+                ),
+                'direccion' => array(
+                    'type' => 'varchar',
+                    'length' => 500,
+                    'not null' => true,
+                ),
+                'correo' => array(
+                    'type' => 'varchar',
+                    'length' => 500,
+                    'not null' => true,
+                ),
+                'telefono' => array(
+                    'type' => 'varchar',
+                    'length' => 100,
+                    'not null' => true,
+                ),
+                'fecha_creacion' => array(
+                    'type' => 'int',
+                    'not null' => true,
+                ),
+                'fecha_edicion' => array(
+                    'type' => 'int',
+                    'not null' => false,
+                ),
+                'uid_creador' => array(
+                    'type' => 'int',
+                    'not null' => true,
+                ),
+                'uid_editor' => array(
+                    'type' => 'int',
+                    'not null' => false,
+                ),
+                'estado' => array(
+                    'type' => 'int',
+                    'not null' => true,
+                    'default' => 1,
+                ),
+            ),
+
+            'primary key' => array('id_responsable'),
+
+        );
+
+    # TURNO -------------------------------------------------------------------------------------------------------------
+    $schema['tp_turno'] = array(
+        'description' => 'Mantenimiento de turnos.',
+        'fields' => array(
+            'id_turno' => array(
+                'type' => 'serial',
+                'not null' => true,
+            ),
+            'nombre' => array(
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => true,
+            ),
+            'id_proyecto' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_creacion' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_edicion' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'uid_creador' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'uid_editor' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'estado' => array(
+                'type' => 'int',
+                'not null' => true,
+                'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_turno'),
+
+        'foreign keys' => [
+            'turno_proyecto' => [
+                'table' => 'tp_proyecto',
+                'columns' => [
+                    'id_proyecto' => 'id_proyecto',
+                ],
+            ],
+          ],
+    );
+
+    # TURNO_USER DAFAULT ---------------------------------------------------------------------------------------------------
+        $schema['tp_user_turno_default'] = array(
+            'description' => 'Tabla inter-media para relacionar las tablas => tp_proyecto y tp_turno.',
+            'fields' => array(
+                'id_user_turno_default' => array(
+                    'type' => 'serial',
+                    'not null' => true,
+                ),
+                'id_proyecto' => array(
+                    'type' => 'int',
+                    'not null' => true,
+                ),
+                'id_equipo' => array(
+                    'type' => 'int',
+                    'not null' => true,
+                ),
+                'id_responsable' => array(
+                    'type' => 'int',
+                    'not null' => true,
+                ),
+            ),
+
+            'primary key' => array('id_user_turno_default'),
+
+            'foreign keys' => [
+                'proyecto_user_turno' => [
+                    'table' => 'tp_proyecto',
+                    'columns' => [
+                        'id_proyecto' => 'id_proyecto',
+                    ],
+                ],
+             ],
+            'foreign keys' => [
+                'turno_user_turno' => [
+                    'table' => 'tp_equipo',
+                    'columns' => [
+                        'id_equipo' => 'id_equipo',
+                    ],
+                ],
+             ],
+            'foreign keys' => [
+                'turno_user_responsable' => [
+                    'table' => 'tp_responsable',
+                    'columns' => [
+                        'id_responsable' => 'id_responsable',
+                    ],
+                ],
+             ],
+        );
+
+    # TURNO_USER ---------------------------------------------------------------------------------------------------
+    $schema['tp_user_turno'] = array(
+        'description' => 'Tabla inter-media para relacionar las tablas => tp_proyecto y tp_turno.',
+        'fields' => array(
+            'id_user_turno' => array(
+                'type' => 'serial',
+                'not null' => true,
+            ),
+            'id_equipo' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'id_responsable' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'id_tarea' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+        ),
+
+        'primary key' => array('id_user_turno'),
+
+        'foreign keys' => [
+            'tarea_user_turno' => [
+                'table' => 'tp_tarea',
+                'columns' => [
+                    'id_tarea' => 'id_tarea',
+                ],
+            ],
+         ],
+        'foreign keys' => [
+            'equipo_user_turno' => [
+                'table' => 'tp_equipo',
+                'columns' => [
+                    'id_equipo' => 'id_equipo',
+                ],
+            ],
+         ],
+        'foreign keys' => [
+            'tarea_user_responsable' => [
+                'table' => 'tp_responsable',
+                'columns' => [
+                    'id_responsable' => 'id_responsable',
+                ],
+            ],
+         ],
+    );
+
+
+    # CHECKLIST -----------------------------------------------------------------------------------------------------------
+    $schema['tp_checklist'] = array(
+        'description' => 'Mantenimiento de ckecklists para los proyectos',
+        'fields' => array(
+            'id_checklist' => array(
+                'type' => 'serial',
+                'not null' => true,
+            ),
+            'nombre' => array(
+                'type' => 'varchar',
+                'length' => 200,
+                'not null' => true,
+            ),
+            'descripcion' => array(
+                'type' => 'varchar',
+                'length' => 500,
+                'not null' => true,
+            ),
+            'id_proyecto' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_creacion' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_edicion' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'uid_creador' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'uid_editor' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'estado' => array(
+                'type' => 'int',
+                'not null' => true,
+                'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_checklist'),
+
+        'foreign keys' => [
+            'checklist_proyecto' => [
+                'table' => 'tp_proyecto',
+                'columns' => [
+                    'id_proyecto' => 'id_proyecto',
+                ],
+            ],
+        ],
+    );
+
+
+
+    # TAREA -----------------------------------------------------------------------------------------------------------
+    $schema['tp_tarea'] = array(
+        'description' => 'Mantenimiento de tarea de los checklist.',
+        'fields' => array(
+            'id_tarea' => array(
+                'type' => 'serial',
+                'not null' => true,
+            ),
+            'codigo' => array(
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => true,
+            ),
+            'nombre' => array(
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => true,
+            ),
+            'descripcion' => array(
+                'type' => 'varchar',
+                'length' => 500,
+                'not null' => true,
+            ),
+            'id_proyecto' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'id_tipo_tarea' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'id_estado_tarea' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'checkin' => array(
+                'type' => 'int',
+                'not null' => true,
+                'default' => 0,
+            ),
+            'comentario_finalizacion' => array(
+                'type' => 'varchar',
+                'length' => 500,
+                'not null' => false,
+            ),
+            'fecha_creacion' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'fecha_edicion' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'uid_creador' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'uid_editor' => array(
+                'type' => 'int',
+                'not null' => false,
+            ),
+            'estado' => array(
+                'type' => 'int',
+                'not null' => true,
+                'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_tarea'),
+
+        'foreign keys' => [
+            'tarea_proyecto' => [
+                'table' => 'tp_proyecto',
+                'columns' => [
+                    'id_proyecto' => 'id_proyecto',
+                ],
+            ],
+        ],
+
+        'foreign keys' => [
+            'tarea_tipo_tarea_' => [
+                'table' => 'tp_tipo_tarea',
+                'columns' => [
+                    'id_tipo_tarea' => 'id_tipo_tarea',
+                ],
+            ],
+        ],
+
+        'foreign keys' => [
+            'tarea_estado_tarea' => [
+                'table' => 'tp_estado_tarea',
+                'columns' => [
+                    'id_estado_tarea' => 'id_estado_tarea',
+                ],
+            ],
+        ],
+    );
+
+
+    # EQUIPO -----------------------------------------------------------------------------------------------------------
+    $schema['tp_equipo'] = array(
+        'description' => 'Mantenimiento de equipos',
+        'fields' => array(
+            'id_equipo' => array(
+              'type' => 'serial',
+              'not null' => true,
+            ),
+            'nombre' => array(
+              'type' => 'varchar',
+              'length' => 200,
+              'not null' => true,
+              'default' => '',
+            ),
+            'fecha_creacion' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'fecha_edicion' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'uid_creador' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'uid_editor' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'estado' => array(
+              'type' => 'int',
+              'not null' => true,
+              'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_equipo'),
+
+        'foreign keys' => [
+            'equipo_tarea' => [
+                'table' => 'tp_tarea',
+                'columns' => [
+                    'id_equipo' => 'id_equipo',
+                ],
+            ],
+        ],
+    );
+
+
+    # USER EQUIPO ---------------------------------------------------------------------------------------------------
+    $schema['tp_user_equipo'] = array(
+        'description' => 'Tabla inter-media para relacionar las tablas => tp_proyecto y tp_turno.',
+        'fields' => array(
+            'id_user_equipo' => array(
+                'type' => 'serial',
+                'not null' => true,
+            ),
+            'id_equipo' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+            'uid' => array(
+                'type' => 'int',
+                'not null' => true,
+            ),
+        ),
+
+        'primary key' => array('id_user_equipo'),
+
+        'foreign keys' => [
+            'user_equipo_equipo' => [
+                'table' => 'tp_equipo',
+                'columns' => [
+                    'id_equipo' => 'id_equipo',
+                ],
+            ],
+        ],
+    );
+
+
+    # SLA -----------------------------------------------------------------------------------------------------------
+    $schema['tp_sla'] = array(
+        'description' => 'Mantenimiento de SLA para las tareas',
+        'fields' => array(
+            'id_sla' => array(
+              'type' => 'serial',
+              'not null' => true,
+            ),
+            'id_tarea' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'nombre' => array(
+              'type' => 'varchar',
+              'length' => 200,
+              'not null' => true,
+              'default' => '',
+            ),
+            'tiempo' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'estado_tiempo' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'fecha_creacion' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'fecha_edicion' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'uid_creador' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'uid_editor' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'estado' => array(
+              'type' => 'int',
+              'not null' => true,
+              'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_sla'),
+
+        'foreign keys' => [
+            'sla_tarea' => [
+                'table' => 'tp_tarea',
+                'columns' => [
+                    'id_tarea' => 'id_tarea',
+                ],
+            ],
+        ],
+    );
+
+    # TIPO TAREA -----------------------------------------------------------------------------------------------------------
+    $schema['tp_tipo_tarea'] = array(
+        'description' => 'Mantenimiento de tipos de tarea',
+        'fields' => array(
+            'id_tipo_tarea' => array(
+              'type' => 'serial',
+              'not null' => true,
+            ),
+            'nombre' => array(
+              'type' => 'varchar',
+              'length' => 200,
+              'not null' => true,
+              'default' => '',
+            ),
+            'fecha_creacion' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'fecha_edicion' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'uid_creador' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'uid_editor' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'estado' => array(
+              'type' => 'int',
+              'not null' => true,
+              'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_tipo_tarea'),
+    );
+
+    # ESTADOS TAREA -----------------------------------------------------------------------------------------------------------
+    $schema['tp_estado_tarea'] = array(
+        'description' => 'Mantenimiento de estados de tareas',
+        'fields' => array(
+            'id_estado_tarea' => array(
+              'type' => 'serial',
+              'not null' => true,
+            ),
+            'nombre' => array(
+              'type' => 'varchar',
+              'length' => 200,
+              'not null' => true,
+              'default' => '',
+            ),
+            'fecha_creacion' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'fecha_edicion' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'uid_creador' => array(
+              'type' => 'int',
+              'not null' => true,
+            ),
+            'uid_editor' => array(
+              'type' => 'int',
+              'not null' => false,
+            ),
+            'estado' => array(
+              'type' => 'int',
+              'not null' => true,
+              'default' => 1,
+            ),
+        ),
+
+        'primary key' => array('id_estado_tarea'),
+    );
+
+
+    return $schema;
+}
+
+
+function mantenimiento_install()
+{
+    $values = [
+    [
+      'nombre' => 'Tigo',
+      'fecha_creacion' => '1575930481',
+      'fecha_edicion' => null,
+      'uid_creador' => '1',
+      'uid_editor' => null,
+    ],
+    [
+      'nombre' => 'Claro',
+      'fecha_creacion' => '1575930481',
+      'fecha_edicion' => null,
+      'uid_creador' => '1',
+      'uid_editor' => null,
+    ],
+  ];
+
+    $connection = \Drupal::database();
+
+    $query = $connection->insert('tp_empresa')->fields(['nombre', 'fecha_creacion', 'fecha_edicion', 'uid_creador', 'uid_editor']);
+    foreach ($values as $record) {
+        $query->values($record);
+    }
+    $query->execute();
+}

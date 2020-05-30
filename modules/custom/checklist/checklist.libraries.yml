@@ -1,0 +1,11 @@
+tarea_library:
+  version: 1.x
+  css:
+    theme:
+#      css/colorbox.css: {}
+  js:
+#    js/jquery.colorbox.js: {}
+    js/tarea.js: {}
+
+#    https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js: { type: external, minified: true }
+#    https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js: { type: external, minified: true }

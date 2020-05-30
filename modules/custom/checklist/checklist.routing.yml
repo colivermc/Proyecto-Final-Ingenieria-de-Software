@@ -1,0 +1,84 @@
+#RUTAS > CHECKLIST
+#=================
+
+checklist.checkslist:
+  path: '/checklists'
+  defaults:
+    _controller: '\Drupal\checklist\Controller\checklistController::mostrarChecklists'
+    _title: 'Checklists'
+  requirements:
+    _permission: 'checklist mostrar checklists'
+
+checklist.tareas:
+  path: '/proyecto/{id_proyecto}/tareas'
+  defaults:
+    _controller: '\Drupal\checklist\Controller\checklistController::mostrarTareasPorproyecto'
+    _title: 'Tareas'
+  requirements:
+    _permission: 'checklist mostrar tareas por proyecto'
+
+checklist.addTarea:
+  path: '/proyecto/{id_proyecto}/agregar-tarea'
+  defaults:
+    _title: 'Agregar Tarea'
+    _form: '\Drupal\checklist\Form\addTarea'
+  requirements:
+    _permission: 'checklist crear tareas por proyecto'
+
+checklist.editTarea:
+  path: '/proyecto/{id_proyecto}/tarea/{id_tarea}/editar'
+  defaults:
+    _title: 'Editar Tarea'
+    _form: '\Drupal\checklist\Form\editTarea'
+  requirements:
+    _permission: 'checklist editar tarea por proyecto'
+
+checklist.deleteTarea:
+  path: '/proyecto/{id_proyecto}/tarea/{id_tarea}/delete'
+  defaults:
+    _title: '¿Deseas eliminar este registro?'
+    _form: '\Drupal\checklist\Form\deleteTarea'
+  requirements:
+    _permission: 'checklist eliminar tarea por proyecto'
+
+checklist.actionsTarea:
+  path: '/proyecto/{id_proyecto}/tarea/{id_tarea}/actions'
+  defaults:
+    _title: '¿Deseas ejecutar las acciones para esta tarea?'
+    _form: '\Drupal\checklist\Form\actionsTarea'
+  requirements:
+    _permission: 'checklist ejecutar acciones por tarea'
+
+checklist.detalleTarea:
+  path: '/proyecto/{id_proyecto}/tarea/{id_tarea}/detail'
+  defaults:
+    _controller: '\Drupal\checklist\Controller\checklistController::detailTarea'
+    _title: 'Detalle de la tarea'
+  requirements:
+    _permission: 'checklist ver detalle de la tarea'
+
+
+checklist.copyTareas:
+  path: '/proyecto/{id_proyecto}/copy-tareas'
+  defaults:
+    _controller: '\Drupal\checklist\Controller\checklistController::copiar_tareas_proyecto'
+    _title: 'Copiar tareas'
+  requirements:
+    _permission: 'capiar tareas de un proyecto'
+
+checklist.copyTareasExecute:
+  path: '/proyecto/{id_proyecto}/proyecto-tareas/{id_proyecto_cp}/copiar'
+  defaults:
+    _controller: '\Drupal\checklist\Controller\checklistController::copiar_tareas_proyecto_ejecutar'
+    _title: 'Copiando tareas'
+  requirements:
+    _permission: 'capiar tareas de un proyecto'
+
+checklist.checkinTarea:
+  path: '/proyecto/{id_proyecto}/tarea/{id_tarea}/checkin'
+  defaults:
+    _title: '¿Deseas finalizar esta tarea?'
+    _form: '\Drupal\checklist\Form\checkinTarea'
+  requirements:
+    _permission: 'checklist finalizar tarea sin accion'
+

@@ -1,0 +1,31 @@
+# PERMISOS > CALENDARIO
+# =====================
+
+calendario mostrar calendario:
+  title: 'Ver calendario'
+  description: 'Ver calendario de eventos'
+
+calendario crear evento para calendario:
+  title: 'Crear evento para el calendario'
+  description: 'Crear nuevo evento para el calendario'
+  restrict access: true
+
+calendario importar eventos para calendario:
+  title: 'Importar eventos para el calendario'
+  description: 'Importar eventos para el calendario'
+  restrict access: true
+
+
+calendario editar evento del calendario:
+  title: 'Editar evento'
+  description: 'Editar evento del calendario'
+  restrict access: true
+
+calendario eliminar evento del calendario:
+  title: 'Eliminar evento'
+  description: 'Eliminar evento'
+  restrict access: true
+
+#calendario ver detalle del evento:
+#    title: 'Ver detalle de evento'
+#    description: 'Ver detalle de evento del calendario'

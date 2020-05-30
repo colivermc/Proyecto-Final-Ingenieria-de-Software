@@ -1,0 +1,5 @@
+name: Task Planner Mantenimiento
+description: Mantenimiento de entidades
+package: Task Planner
+type: module
+core: 8.x

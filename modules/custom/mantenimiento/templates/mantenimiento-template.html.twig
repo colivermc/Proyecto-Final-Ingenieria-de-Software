@@ -1,0 +1,61 @@
+{{ attach_library('mantenimiento/mantenimiento') }}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<div class="col-sm-12 col-md-6">
+    <div class="card-block">
+        <div class="title-channel-block">
+            <h2>Mantenimiento Flagger</h2>
+        </div>
+        <div class="body-block">
+            <ul class="mantenimientos-list-block">
+                <li><a href="{{ path ('mantenimiento.empresas') }}">Empresa</a></li>
+                <li><a href="{{ path ('mantenimiento.paises') }}">País</a></li>
+                <li><a href="{{ path ('mantenimiento.equipos') }}">Equipo</a></li>
+                <li><a href="{{ path ('mantenimiento.responsables') }}">Responsable</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 col-md-6">
+    <div class="card-block">
+        <div class="title-channel-block">
+            <h2>AWS Medialive</h2>
+        </div>
+        <div class="body-block">
+            <ul class="mantenimientos-list-block">
+                <li><a href="{{ path ('mantenimiento.canales') }}">Canal</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 col-md-6">
+    <div class="card-block">
+        <div class="title-channel-block">
+            <h2>Slack</h2>
+        </div>
+        <div class="body-block">
+            <ul class="mantenimientos-list-block">
+                <li><a href="{{ path ('mantenimiento.canalesslack') }}">Canal Slack</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 col-md-6">
+    <div class="card-block">
+        <div class="title-channel-block">
+            <h2>Jira</h2>
+        </div>
+        <div class="body-block">
+            <ul class="mantenimientos-list-block">
+                <li><a href="{{ path ('mantenimiento.proyectosJira') }}">Proyecto Jira</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
